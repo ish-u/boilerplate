@@ -1,0 +1,13 @@
+{
+  "name": "react_express_with_docker",
+  "version": "1.0.0",
+  "description": "boilderplate for react and express on docker",
+  "main": "index.js",
+  "scripts": {
+    "init": "cd client && npm install && cd ../ && cd server && npm install && cd ../ && docker-compose -f docker-compose.dev.yml -p dev_env build",
+    "dev": "docker-compose -f docker-compose.dev.yml -p dev_env up",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anmol Gupta",
+  "license": "ISC"
+}

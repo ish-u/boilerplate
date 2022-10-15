@@ -1,0 +1,22 @@
+version: '3'
+services:
+  express_server_dev:
+    build: 
+      context: ./server
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server:/server
+      - ./server/node_modules:/server/node_modules
+    container_name: express_server_dev
+  react_client_dev:
+    build: 
+      context: ./client
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - 5173:5173
+    volumes:
+      - ./client:/client
+      - ./client/node_modules:/client/node_modules
+    container_name: recact_client_dev

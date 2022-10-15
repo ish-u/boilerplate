@@ -1,0 +1,8 @@
+FROM node:lts-alpine3.15
+RUN mkdir /server
+COPY package*.json /server
+WORKDIR /server
+RUN npm install
+COPY . .
+EXPOSE 5000
+CMD [ "npm","run","dev" ]
